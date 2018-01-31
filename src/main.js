@@ -35,7 +35,7 @@ $('#pharmaces').onclick = () => {
     const sw = bounds.getSouthWest();
     const ne  = bounds.getNorthEast();
 
-    overpass(`[out:json];node(${sw.lat},${sw.lng},${ne.lat},${ne.lng})[amenity=pharmacy];out;`, (err, result) => {
+    overpass(`node(${sw.lat},${sw.lng},${ne.lat},${ne.lng})[amenity=pharmacy];out;`, (err, result) => {
         if (err) {
             return alert(err);
         }
